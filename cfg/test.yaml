@@ -17,7 +17,7 @@ name: S2_D4_F64_H8_HW1_CSplit
 #   test_ar
 mode: train-val-test
 
-save_dir: /home/wulin/Projects/HOI/chois_release/HOI-Dyn-X/runs
+save_dir: YOUR FOULDER
 use_tb: true
 
 # Resume/load checkpoint
@@ -79,7 +79,7 @@ model:
   #   pred R_{t+S} = R_t @ Delta R
   use_delta_motion: true
 
-  # Reserved interface for future higher-order dynamics loss.
+  # Reserved interface
   # Clean version should keep this false.
   use_higher_order: false
 
@@ -87,12 +87,12 @@ model:
   #   contact_*_loss
   #   no_contact_*_loss
   # This does not change the training objective unless trainer explicitly uses these terms.
-  use_contact_split_loss: true
+  use_contact_split_loss: false
 
   # Optional zero-motion-style static object monitor/regularizer.
   # Recommended false for clean experiments.
-  use_static_object_loss: true
+  use_static_object_loss: false
 
   # Only used when use_static_object_loss=true.
   # static = no human contact + object on floor.
-  use_floor_contact_for_static: true
+  use_floor_contact_for_static: false
